@@ -10,11 +10,18 @@ const SignUp = () => {
   const [address, setAddress] = useState("");
   const [role, setRole] = useState("");
   const [password, setPassword] = useState("");
-  const [bankAccountName, setBankAccountName] = useState("");
-  const [bankAccountNumber, setBankAccountNumber] = useState("");
+
+  // const [bankAccountName, setBankAccountName] = useState("");
+  // const [bankAccountNumber, setBankAccountNumber] = useState("");
+  // const [bankName, setBankName] = useState("");
+  // const [easypaisaAccountNumber, setEasypaisaAccountNumber] = useState("");
+  // const [paypalEmail, setPaypalEmail] = useState("");
+
+  // Bank Details
   const [bankName, setBankName] = useState("");
-  const [easypaisaAccountNumber, setEasypaisaAccountNumber] = useState("");
-  const [paypalEmail, setPaypalEmail] = useState("");
+  const [accountNumber, setAccountNumber] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
+
   const [profileImage, setProfileImage] = useState("");
   const [profileImagePreview, setProfileImagePreview] = useState("");
 
@@ -32,12 +39,18 @@ const SignUp = () => {
     formData.append("address", address);
     formData.append("role", role);
     formData.append("profileImage", profileImage);
-    role === "Auctioneer" &&
-      (formData.append("bankAccountName", bankAccountName),
-      formData.append("bankAccountNumber", bankAccountNumber),
-      formData.append("bankName", bankName),
-      formData.append("easypaisaAccountNumber", easypaisaAccountNumber),
-      formData.append("paypalEmail", paypalEmail));
+    // role === "Auctioneer" &&
+    //   (formData.append("bankAccountName", bankAccountName),
+    //   formData.append("bankAccountNumber", bankAccountNumber),
+    //   formData.append("bankName", bankName),
+    //   formData.append("easypaisaAccountNumber", easypaisaAccountNumber),
+    //   formData.append("paypalEmail", paypalEmail));
+    // dispatch(register(formData));
+
+    role === "Auctioneer" && formData.append("bankName", bankName);
+    formData.append("accountNumber", accountNumber);
+    formData.append("mobileNumber", mobileNumber);
+
     dispatch(register(formData));
   };
 
@@ -153,8 +166,8 @@ const SignUp = () => {
                 <input type="file" onChange={imageHandler} />
               </div>
             </div>
-            <div className="flex flex-col gap-4">
-              <label className="font-semibold text-xl md:2xl flex flex-col">
+            {/* <div className="flex flex-col gap-4"> */}
+            {/* <label className="font-semibold text-xl md:2xl flex flex-col">
                 Payment Method Details{" "}
                 <span className="text-[12px] text-stone-500">
                   Fill Payment Details Only If you are registering as an
@@ -228,6 +241,59 @@ const SignUp = () => {
             >
               {loading && "Registering..."}
               {!loading && "Register"}
+            </button> */}
+            <div className="flex flex-col gap-4">
+              <p className="font-semibold text-xl md:text-2xl">
+                Payment Method Details
+              </p>
+              <span className="text-sm text-stone-500">
+                Fill Payment Details Only If you are registering as an
+                Auctioneer
+              </span>
+
+              <div className="flex flex-col gap-2">
+                <label className="text-base text-stone-600">Bank Details</label>
+                <div className="flex flex-col gap-4">
+                  <select
+                    value={bankName}
+                    onChange={(e) => setBankName(e.target.value)}
+                    className="w-full text-base py-2 bg-transparent border-b border-stone-300 focus:outline-none focus:border-stone-500"
+                    disabled={role === "Bidder"}
+                  >
+                    <option value="">Select Your Bank</option>
+                    <option value="NIC Asia Bank">NIC Asia Bank</option>
+                    <option value="NMB Bank">NMB Bank</option>
+                    <option value="Global IME Bank">Global IME Bank</option>
+                    <option value="NIMB Bank">NIMB Bank</option>
+                  </select>
+
+                  <input
+                    type="text"
+                    value={accountNumber}
+                    placeholder="Bank Account Number"
+                    onChange={(e) => setAccountNumber(e.target.value)}
+                    className="w-full text-base py-2 bg-transparent border-b border-stone-300 focus:outline-none focus:border-stone-500"
+                    disabled={role === "Bidder"}
+                  />
+
+                  <input
+                    type="text"
+                    value={mobileNumber}
+                    placeholder="Mobile Number"
+                    onChange={(e) => setMobileNumber(e.target.value)}
+                    className="w-full text-base py-2 bg-transparent border-b border-stone-300 focus:outline-none focus:border-stone-500"
+                    disabled={role === "Bidder"}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <button
+              className="bg-[#d6482b] w-full font-semibold hover:bg-[#b8381e] transition-all duration-300 text-xl py-2 px-4 rounded-md text-white my-4"
+              type="submit"
+              disabled={loading}
+            >
+              {loading ? "Registering..." : "Register"}
             </button>
           </form>
         </div>
