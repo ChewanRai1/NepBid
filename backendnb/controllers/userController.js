@@ -23,29 +23,34 @@ export const register = catchAsyncErrors(async (req, res, next) => {
     phone,
     address,
     role,
-    bankAccountNumber,
-    bankAccountName,
     bankName,
-    easypaisaAccountNumber,
-    paypalEmail,
+    accountNumber,
+    mobileNumber,
   } = req.body;
 
   if (!userName || !email || !phone || !password || !address || !role) {
     return next(new ErrorHandler("Please fill full form.", 400));
   }
+  // if (role === "Auctioneer") {
+  //   if (!bankAccountName || !bankAccountNumber || !bankName) {
+  //     return next(
+  //       new ErrorHandler("Please provide your full bank details.", 400)
+  //     );
+  //   }
+  //   if (!easypaisaAccountNumber) {
+  //     return next(
+  //       new ErrorHandler("Please provide your easypaisa account number.", 400)
+  //     );
+  //   }
+  //   if (!paypalEmail) {
+  //     return next(new ErrorHandler("Please provide your paypal email.", 400));
+  //   }
+  // }
   if (role === "Auctioneer") {
-    if (!bankAccountName || !bankAccountNumber || !bankName) {
+    if (!bankName || !accountNumber || !mobileNumber) {
       return next(
-        new ErrorHandler("Please provide your full bank details.", 400)
+        new ErrorHandler("Please provide your complete bank details.", 400)
       );
-    }
-    if (!easypaisaAccountNumber) {
-      return next(
-        new ErrorHandler("Please provide your easypaisa account number.", 400)
-      );
-    }
-    if (!paypalEmail) {
-      return next(new ErrorHandler("Please provide your paypal email.", 400));
     }
   }
   const isRegistered = await User.findOne({ email });
@@ -78,18 +83,23 @@ export const register = catchAsyncErrors(async (req, res, next) => {
       public_id: cloudinaryResponse.public_id,
       url: cloudinaryResponse.secure_url,
     },
-    paymentMethods: {
-      bankTransfer: {
-        bankAccountNumber,
-        bankAccountName,
-        bankName,
-      },
-      easypaisa: {
-        easypaisaAccountNumber,
-      },
-      paypal: {
-        paypalEmail,
-      },
+    // paymentMethods: {
+    //   bankTransfer: {
+    //     bankAccountNumber,
+    //     bankAccountName,
+    //     bankName,
+    //   },
+    //   easypaisa: {
+    //     easypaisaAccountNumber,
+    //   },
+    //   paypal: {
+    //     paypalEmail,
+    //   },
+    // },
+    bankDetails: {
+      bankName,
+      accountNumber,
+      mobileNumber,
     },
   });
   generateToken(user, "User Registered.", 201, res);

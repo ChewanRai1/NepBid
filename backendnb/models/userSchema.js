@@ -30,18 +30,23 @@ const userSchema = new mongoose.Schema({
       required: true,
     },
   },
-  paymentMethods: {
-    bankTransfer: {
-      bankAccountNumber: String,
-      bankAccountName: String,
-      bankName: String,
-    },
-    easypaisa: {
-      easypaisaAccountNumber: Number,
-    },
-    paypal: {
-      paypalEmail: String,
-    },
+  // paymentMethods: {
+  //   bankTransfer: {
+  //     bankAccountNumber: String,
+  //     bankAccountName: String,
+  //     bankName: String,
+  //   },
+  //   easypaisa: {
+  //     easypaisaAccountNumber: Number,
+  //   },
+  //   paypal: {
+  //     paypalEmail: String,
+  //   },
+  // },
+  bankDetails: {
+    bankName: String,
+    accountNumber: String,
+    mobileNumber: String,
   },
   role: {
     type: String,
