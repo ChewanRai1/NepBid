@@ -33,11 +33,11 @@ const About = () => {
       <section className="w-full h-fit px-5 pt-20  gap-7 flex flex-col min-h-screen py-4 justify-center">
         <div>
           <h1
-            className={`text-[#d6482b] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
+            className={`text-[#d6482b] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-4xl 2xl:text-8xl`}
           >
             About Us
           </h1>
-          <p className="text-xl text-stone-600">
+          <p className="text-l text-stone-600">
             Welcome to NepBid, the ultimate destination for online auctions and
             bidding excitement. Founded in 2024, we are dedicated to providing a
             dynamic and user-friendly platform for buyers and sellers to
@@ -46,11 +46,11 @@ const About = () => {
         </div>
         <div>
           <h3
-            className={`text-[#111] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl`}
+            className={`text-[#111] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-1xl`}
           >
             Our Mission
           </h3>
-          <p className="text-xl text-stone-600">
+          <p className="text-l text-stone-600">
             At NepBid, our mission is to revolutionize the way people buy and
             sell items online. We strive to create an engaging and trustworthy
             marketplace that empowers individuals and businesses to discover
@@ -60,14 +60,14 @@ const About = () => {
         </div>
         <div>
           <h3
-            className={`text-[#111] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl`}
+            className={`text-[#111] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-1xl`}
           >
             Our Values
           </h3>
           <ul className="list-inside">
             {values.map((element) => {
               return (
-                <li className="text-xl text-stone-600 mb-2" key={element.id}>
+                <li className="text-l text-stone-600 mb-2" key={element.id}>
                   <span className="text-black font-bold">{element.title}</span>:{" "}
                   {element.description}
                 </li>
@@ -77,11 +77,11 @@ const About = () => {
         </div>
         <div>
           <h3
-            className={`text-[#111] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl`}
+            className={`text-[#111] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-1xl`}
           >
             Our Story
           </h3>
-          <p className="text-xl text-stone-600">
+          <p className="text-l text-stone-600">
             Founded by Chewan, NepBid was born out of a passion for connecting
             people with unique and valuable items. With years of experience in
             the auction industry, our team is committed to creating a platform
@@ -90,11 +90,11 @@ const About = () => {
         </div>
         <div>
           <h3
-            className={`text-[#111] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl`}
+            className={`text-[#111] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-1xl`}
           >
             Join Us
           </h3>
-          <p className="text-xl text-stone-600">
+          <p className="text-l text-stone-600">
             Whether you're looking to buy, sell, or simply explore, NepBid
             invites you to join our growing community of auction enthusiasts.
             Discover new opportunities, uncover hidden gems, and experience the
