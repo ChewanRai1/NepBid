@@ -26,7 +26,7 @@ const ViewAuctionDetails = () => {
 
   return (
     <>
-      <section className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] flex flex-col">
+      <section className="w-full h-fit px-5 pt-20  flex flex-col">
         <div className="text-[16px] flex flex-wrap gap-2 items-center">
           <Link
             to="/"
