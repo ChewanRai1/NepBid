@@ -29,7 +29,7 @@ const Home = () => {
           <p className="text-[#DECCBE] font-bold text-xl mb-8">
             Transparency Leads to Your Victory
           </p>
-          <h1
+          {/* <h1
             className={`text-[#111] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`} //text-center
           >
             Transparent Auctions
@@ -38,6 +38,12 @@ const Home = () => {
             className={`text-[#d6482b] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`} //text-center
           >
             Be The Winner
+          </h1> */}
+          <h1 className="text-[#111] text-4xl md:text-5xl lg:text-6xl xl:text-4xl font-bold mb-2 max-w-4xl">
+            Transparent Auctions
+          </h1>
+          <h1 className="text-[#d6482b] text-4xl md:text-5xl lg:text-6xl xl:text-5xl font-bold mb-2 max-w-4xl">
+            Be The Winner 💥
           </h1>
           <div className="flex gap-4 my-8">
             {!isAuthenticated && (
