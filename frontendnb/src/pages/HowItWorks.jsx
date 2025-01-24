@@ -52,7 +52,7 @@ const HowItWorks = () => {
     <>
       <section className="w-full h-fit px-5 pt-20 flex flex-col min-h-screen py-4 justify-center">
         <h1
-          className={`text-[#d6482b] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
+          className={`text-[#d6482b] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-4xl 2xl:text-8xl`}
         >
           Discover How NepBid Operates
         </h1>
@@ -63,15 +63,15 @@ const HowItWorks = () => {
                 key={index}
                 className="bg-white rounded-md p-2 lg:p-5 flex flex-col gap-2 group hover:bg-black transition-all duration-300"
               >
-                <div className="bg-black text-white p-3 text-xl rounded-full w-fit group-hover:bg-[#d6482b] transition-all duration-300">
+                <div className="bg-black text-white p-3 text-l rounded-full w-fit group-hover:bg-[#d6482b] transition-all duration-300">
                   {element.icon}
                 </div>
                 <h3
-                  className={`text-[#D6482B] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl`}
+                  className={`text-[#D6482B] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-1xl`}
                 >
                   {element.title}
                 </h3>
-                <p className="text-xl text-stone-700 group-hover:text-[#fff] transition-all duration-300">
+                <p className="text-l text-stone-700 group-hover:text-[#fff] transition-all duration-300">
                   {element.description}
                 </p>
               </div>
