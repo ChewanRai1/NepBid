@@ -13,7 +13,7 @@ const Auctions = () => {
         <article className="w-full h-fit px-5 pt-20  flex flex-col">
           <section className="my-8">
             <h1
-              className={`text-[#d6482b] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
+              className={`text-[#d6482b] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-4xl 2xl:text-8xl`}
             >
               Auctions
             </h1>
