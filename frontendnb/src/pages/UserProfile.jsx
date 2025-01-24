@@ -13,7 +13,7 @@ const UserProfile = () => {
   }, [isAuthenticated]);
   return (
     <>
-      <section className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] flex flex-col min-h-screen py-4 justify-start">
+      <section className="w-full h-fit px-5 pt-20  flex flex-col min-h-screen py-4 justify-start">
         {loading ? (
           <Spinner />
         ) : (
@@ -109,38 +109,35 @@ const UserProfile = () => {
                       </label>
                       <input
                         type="text"
-                        defaultValue={user.paymentMethods.bankTransfer.bankName}
+                        // defaultValue={user.paymentMethods.bankTransfer.bankName}
+                        defaultValue={user.bankDetails.bankName}
                         className="w-ful mt-1 p-2 border-gray-300 rounded-md focus:outline-none"
                         disabled
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700">
-                        Bank Account (IBAN)
+                        Bank Account Number
                       </label>
                       <input
                         type="text"
-                        defaultValue={
-                          user.paymentMethods.bankTransfer.bankAccountNumber
-                        }
+                        defaultValue={user.bankDetails.accountNumber}
                         className="w-ful mt-1 p-2 border-gray-300 rounded-md focus:outline-none"
                         disabled
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700">
-                        User Name On Bank Account
+                        Registered Mobile Number
                       </label>
                       <input
                         type="text"
-                        defaultValue={
-                          user.paymentMethods.bankTransfer.bankAccountName
-                        }
+                        defaultValue={user.bankDetails.mobileNumber}
                         className="w-ful mt-1 p-2 border-gray-300 rounded-md focus:outline-none"
                         disabled
                       />
                     </div>
-                    <div>
+                    {/* <div>
                       <label className="block text-sm font-medium text-gray-700">
                         Easypaisa Account Number
                       </label>
@@ -152,8 +149,8 @@ const UserProfile = () => {
                         className="w-ful mt-1 p-2 border-gray-300 rounded-md focus:outline-none"
                         disabled
                       />
-                    </div>
-                    <div>
+                    </div> */}
+                    {/* <div>
                       <label className="block text-sm font-medium text-gray-700">
                         Paypal Email
                       </label>
@@ -163,7 +160,7 @@ const UserProfile = () => {
                         className="w-ful mt-1 p-2 border-gray-300 rounded-md focus:outline-none"
                         disabled
                       />
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               )}
