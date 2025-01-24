@@ -30,12 +30,12 @@ const Home = () => {
             Transparency Leads to Your Victory
           </p>
           <h1
-            className={`text-[#111] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
+            className={`text-[#111] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`} //text-center
           >
             Transparent Auctions
           </h1>
           <h1
-            className={`text-[#d6482b] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
+            className={`text-[#d6482b] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`} //text-center
           >
             Be The Winner
           </h1>
@@ -46,14 +46,14 @@ const Home = () => {
                   to="/sign-up"
                   className="bg-[#d6482b] font-semibold hover:bg-[#b8381e] rounded-md px-8 flex items-center py-2 text-white  transition-all duration-300"
                 >
-                  Sign Up
+                  Get started
                 </Link>
-                <Link
+                {/* <Link
                   to={"/login"}
                   className="text-[#DECCBE] bg-transparent border-2 border-[#DECCBE] hover:bg-[#fff3fd] hover:text-[#fdba88] font-bold text-xl  rounded-md px-8 flex items-center py-2 transition-all duration-300"
                 >
                   Login
-                </Link>
+                </Link> */}
               </>
             )}
           </div>
