@@ -50,7 +50,7 @@ const HowItWorks = () => {
 
   return (
     <>
-      <section className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] flex flex-col min-h-screen py-4 justify-center">
+      <section className="w-full h-fit px-5 pt-20 flex flex-col min-h-screen py-4 justify-center">
         <h1
           className={`text-[#d6482b] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
         >
