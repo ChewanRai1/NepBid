@@ -90,7 +90,7 @@ const ViewMyAuctions = () => {
       {" "}
       {/* Adjusted height */}
       <div className="w-full px-5 pt-20 lg:pl-[320px] flex-1">
-        <h1 className="text-[#d6482b] text-2xl font-bold mb-6 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl">
+        <h1 className="text-[#d6482b] text-2xl font-bold mb-6 min-[480px]:text-4xl md:text-6xl xl:text-4xl 2xl:text-8xl">
           My Auctions
         </h1>
         {loading ? (
@@ -110,7 +110,7 @@ const ViewMyAuctions = () => {
                 />
               ))
             ) : (
-              <h3 className="text-[#666] text-xl font-semibold min-[480px]:text-xl md:text-2xl lg:text-3xl">
+              <h3 className="text-[#666] text-xl font-semibold min-[480px]:text-xl md:text-2xl lg:text-1xl">
                 You have not posted any auction.
               </h3>
             )}
