@@ -30,7 +30,7 @@ const About = () => {
 
   return (
     <>
-      <section className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] gap-7 flex flex-col min-h-screen py-4 justify-center">
+      <section className="w-full h-fit px-5 pt-20  gap-7 flex flex-col min-h-screen py-4 justify-center">
         <div>
           <h1
             className={`text-[#d6482b] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
@@ -82,11 +82,10 @@ const About = () => {
             Our Story
           </h3>
           <p className="text-xl text-stone-600">
-            Founded by Chewan, NepBid was born out of a passion for
-            connecting people with unique and valuable items. With years of
-            experience in the auction industry, our team is committed to
-            creating a platform that offers an unparalleled auction experience
-            for users worldwide.
+            Founded by Chewan, NepBid was born out of a passion for connecting
+            people with unique and valuable items. With years of experience in
+            the auction industry, our team is committed to creating a platform
+            that offers an unparalleled auction experience for users worldwide.
           </p>
         </div>
         <div>
