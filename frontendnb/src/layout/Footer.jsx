@@ -1,60 +1,74 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaFacebook } from "react-icons/fa";
-import { RiInstagramFill } from "react-icons/ri";
-import { SiGooglesearchconsole } from "react-icons/si";
-import { BsFillInfoSquareFill } from "react-icons/bs";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    //border-t-[1px] border-t-stone-500
-    <footer className="bg-[#e0dacd] py-8 mt-auto  shadow-[0_-1px_3px_0_rgba(0,0,0,0.1)]">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="flex flex-col gap-4">
-            <h3 className="text-xl font-semibold mb-2">Quick Links</h3>
-            <Link
-              to="/how-it-works-info"
-              className="flex items-center gap-2 text-lg hover:text-[#D6482b]"
-            >
-              <SiGooglesearchconsole /> How it works
-            </Link>
-            <Link
-              to="/about"
-              className="flex items-center gap-2 text-lg hover:text-[#D6482b]"
-            >
-              <BsFillInfoSquareFill /> About Us
-            </Link>
-            <Link
-              to="/contact"
-              className="text-stone-500 font-semibold hover:text-[#d6482b]"
-            >
-              Contact Us
-            </Link>
-          </div>
+    <footer className="bg-[#80796b] text-white py-9">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Navigation Links */}
+        <div className="flex justify-center gap-16 mb-12">
+          <Link
+            to="/about"
+            className="text-lg hover:text-gray-300 transition-colors"
+          >
+            About Us
+          </Link>
+          <Link
+            to="/how-it-works-info"
+            className="text-lg hover:text-gray-300 transition-colors"
+          >
+            How it works
+          </Link>
+          <Link
+            to="/contact"
+            className="text-lg hover:text-gray-300 transition-colors"
+          >
+            Contact Us
+          </Link>
+        </div>
 
-          <div className="flex flex-col gap-4">
-            <h3 className="text-xl font-semibold mb-2">Follow Us</h3>
-            <div className="flex gap-4">
-              <Link
-                to="/"
-                className="bg-white text-stone-500 p-2 text-xl rounded-sm hover:text-blue-700 shadow-sm"
-              >
-                <FaFacebook />
-              </Link>
-              <Link
-                to="/"
-                className="bg-white text-stone-500 p-2 text-xl rounded-sm hover:text-pink-500 shadow-sm"
-              >
-                <RiInstagramFill />
-              </Link>
-            </div>
-          </div>
+        {/* About Text */}
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <p className="text-lg leading-relaxed text-gray-200">
+            NepBid is Nepal's premier online auction platform, connecting buyers
+            and sellers in a transparent environment. We strive to create a
+            seamless bidding experience while ensuring trust and reliability in
+            every transaction.
+          </p>
+        </div>
 
-          <div className="flex flex-col gap-4">
-            <h3 className="text-xl font-semibold mb-2">Legal</h3>
-            <p className="text-stone-500">&copy; NepBid, LLC.</p>
-          </div>
+        {/* Social Icons */}
+        <div className="flex justify-center gap-8 mb-12">
+          <a
+            href="https://www.facebook.com/rai.chewan123/"
+            className="text-2xl hover:text-gray-300 transition-colors"
+          >
+            <FaFacebook />
+          </a>
+          <a
+            href="https://www.instagram.com/chewan_rai/"
+            className="text-2xl hover:text-gray-300 transition-colors"
+          >
+            <FaInstagram />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/chewan-rai140/"
+            className="text-2xl hover:text-gray-300 transition-colors"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://www.tiktok.com/@neonx9475"
+            className="text-2xl hover:text-gray-300 transition-colors"
+          >
+            <FaTiktok />
+          </a>
+        </div>
+
+        {/* Copyright */}
+        <div className="text-center text-gray-300">
+          <p>© {new Date().getFullYear()} NepBid. All rights reserved.</p>
         </div>
       </div>
     </footer>
