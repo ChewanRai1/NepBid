@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SideDrawer from "./layout/NavBar";
+import Footer from "./layout/Footer";
 import Home from "./pages/Home";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -49,6 +50,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/me" element={<UserProfile />} />
       </Routes>
+      <Footer />
       <ToastContainer position="top-right" />
     </Router>
   );
