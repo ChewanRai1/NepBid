@@ -798,12 +798,12 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="hidden lg:flex fixed top-0 w-full bg-[#f6f4f0] h-20 shadow-md z-40 px-8">
+      <nav className="hidden lg:flex fixed top-0 w-full bg-[#f6f4f0] h-20 shadow-md z-40 px-12">
         {" "}
         {/* Increased height to h-20 */}
         <div className="flex items-center justify-between w-full">
           {/* Logo - made larger */}
-          <Link to="/" className="h-16">
+          <Link to="/" className="h-20">
             {" "}
             {/* Increased logo height */}
             <img
