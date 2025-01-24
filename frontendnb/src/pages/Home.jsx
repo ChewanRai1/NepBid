@@ -23,7 +23,8 @@ const Home = () => {
   const { isAuthenticated } = useSelector((state) => state.user);
   return (
     <>
-      <section className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] flex flex-col min-h-screen py-4 justify-center">
+      {/* <section className="w-full h-fit px-5 pt-20  flex flex-col min-h-screen py-4 justify-center"> */}
+      <section className="w-full h-fit px-5 pt-20 flex flex-col min-h-screen py-4 justify-center">
         <div>
           <p className="text-[#DECCBE] font-bold text-xl mb-8">
             Transparency Leads to Your Victory
@@ -58,7 +59,9 @@ const Home = () => {
           </div>
         </div>
         <div className="flex flex-col gap-6">
-          <h3 className="text-[#111] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl">How it works</h3>
+          <h3 className="text-[#111] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl">
+            How it works
+          </h3>
           <div className="flex flex-col gap-4 md:flex-row md:flex-wrap w-full">
             {howItWorks.map((element) => {
               return (
