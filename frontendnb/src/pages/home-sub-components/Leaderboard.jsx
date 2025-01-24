@@ -63,3 +63,60 @@ const Leaderboard = () => {
 };
 
 export default Leaderboard;
+
+// import React from "react";
+// import Spinner from "@/custom-components/Spinner";
+// import { useSelector } from "react-redux";
+
+// const Leaderboard = () => {
+//   const { loading, leaderboard } = useSelector((state) => state.user);
+
+//   return (
+//     <div className="flex flex-col h-screen">
+//       <div className="flex-1 w-full px-5 pt-20 lg:pl-[320px] pb-8">
+//         {loading ? (
+//           <Spinner />
+//         ) : (
+//           <>
+//             <h1 className="text-[#D6482B] text-2xl font-bold mb-6 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl">
+//               Bidders Leaderboard
+//             </h1>
+//             <div className="overflow-x-auto">
+//               <table className="min-w-full bg-white border border-gray-300">
+//                 <thead>
+//                   <tr>
+//                     <th className="py-2 px-4 text-left">Profile Pic</th>
+//                     <th className="py-2 px-4 text-left">Username</th>
+//                     <th className="py-2 px-4 text-left">Bid Expenditure</th>
+//                     <th className="py-2 px-4 text-left">Auctions Won</th>
+//                   </tr>
+//                 </thead>
+//                 <tbody className="text-gray-700">
+//                   {leaderboard.slice(0, 100).map((element, index) => (
+//                     <tr key={element._id} className="border-b border-gray-300">
+//                       <td className="flex gap-2 items-center py-2 px-4">
+//                         <span className="text-stone-400 font-semibold text-xl w-7 hidden sm:block">
+//                           {index + 1}
+//                         </span>
+//                         <img
+//                           src={element.profileImage?.url}
+//                           alt={element.username}
+//                           className="h-12 w-12 object-cover rounded-full"
+//                         />
+//                       </td>
+//                       <td className="py-2 px-4">{element.userName}</td>
+//                       <td className="py-2 px-4">{element.moneySpent}</td>
+//                       <td className="py-2 px-4">{element.auctionsWon}</td>
+//                     </tr>
+//                   ))}
+//                 </tbody>
+//               </table>
+//             </div>
+//           </>
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Leaderboard;
