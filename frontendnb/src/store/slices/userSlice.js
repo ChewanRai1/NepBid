@@ -218,7 +218,7 @@ export const logout = () => async (dispatch) => {
 // };
 
 export const fetchUser =
-  (suppressAuthToast = false) =>
+  (suppressAuthToast = true) =>
   async (dispatch) => {
     dispatch(userSlice.actions.fetchUserRequest());
     try {
@@ -228,16 +228,17 @@ export const fetchUser =
       } else {
         dispatch(userSlice.actions.fetchUserFailed());
       }
-      dispatch(userSlice.actions.clearAllErrors());
     } catch (error) {
       dispatch(userSlice.actions.fetchUserFailed());
       if (error.response) {
-        // Suppress toast for unauthenticated users during initialization
-        if (error.response.status === 401 && suppressAuthToast) {
-          return;
+        // Only show error toast if specifically needed and not a 401 error
+        if (error.response.status !== 401 && !suppressAuthToast) {
+          toast.error(
+            error.response.data.message || "Failed to fetch user data"
+          );
         }
-        toast.error(error.response.data.message || "Failed to fetch user data");
       }
+    } finally {
       dispatch(userSlice.actions.clearAllErrors());
     }
   };
