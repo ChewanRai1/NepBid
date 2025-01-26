@@ -22,17 +22,19 @@ import ViewAuctionDetails from "./pages/ViewAuctionDetails";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Contact from "./pages/Contact";
 import UserProfile from "./pages/UserProfile";
+import HeroSection from "./layout/HeroSection";
 
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchUser());
+    dispatch(fetchUser(true));
     dispatch(getAllAuctionItems());
     dispatch(fetchLeaderboard());
   }, []);
   return (
     <Router>
       <SideDrawer />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
         <Routes>
           <Route path="/" element={<Home />} />
