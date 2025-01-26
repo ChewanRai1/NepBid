@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
+import { ImSpinner9 } from "react-icons/im";
 
 const CreateAuction = () => {
   const [image, setImage] = useState("");
@@ -222,8 +223,21 @@ const CreateAuction = () => {
               </label>
             </div>
           </div>
-          <button className="bg-[#D6482B] font-semibold hover:bg-[#b8381e] text-xl transition-all duration-300 py-2 px-4 rounded-md text-white w-[280px] mx-auto lg:w-[640px] my-4">
+          {/* <button className="bg-[#D6482B] font-semibold hover:bg-[#b8381e] text-xl transition-all duration-300 py-2 px-4 rounded-md text-white w-[280px] mx-auto lg:w-[640px] my-4">
             {loading ? "Creating Auction..." : "Create Auction"}
+          </button> */}
+          <button
+            className="bg-[#D6482B] font-semibold hover:bg-[#b8381e] text-xl transition-all duration-300 py-2 px-4 rounded-md text-white w-[280px] mx-auto lg:w-[640px] my-4 flex items-center justify-center gap-2"
+            disabled={loading}
+          >
+            {loading ? (
+              <>
+                <ImSpinner9 className="animate-spin" />
+                Creating...
+              </>
+            ) : (
+              "Create Auction"
+            )}
           </button>
         </form>
       </div>
