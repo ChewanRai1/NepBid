@@ -36,22 +36,32 @@ const AuctionItem = () => {
   return (
     <>
       <section className="w-full h-fit px-5 pt-20  flex flex-col">
-        <div className="text-[16px] flex flex-wrap gap-2 items-center">
-          <Link
-            to="/"
-            className="font-semibold transition-all duration-300 hover:text-[#D6482B]"
+        <div className="space-y-4">
+          {/* Back Button */}
+          <button
+            onClick={() => navigateTo(-1)}
+            className="flex items-center gap-2 bg-[#DECCBE] hover:bg-[#D6482B] .text-orange-100 hover:text-white px-4 py-2 rounded-lg transition-all duration-300 shadow-sm group"
+
           >
-            Home
-          </Link>
-          <FaGreaterThan className="text-stone-400" />
-          <Link
-            to={"/auctions"}
-            className="font-semibold transition-all duration-300 hover:text-[#D6482B]"
-          >
-            Auctions
-          </Link>
-          <FaGreaterThan className="text-stone-400" />
-          <p className="text-stone-600">{auctionDetail.title}</p>
+            <FaGreaterThan className="rotate-180 transition-transform group-hover:-translate-x-1" />
+            <span className="font-medium">Back</span>
+          </button>
+
+          {/* Breadcrumb Navigation */}
+          <div className="flex items-center gap-2 text-[16px]">
+            <Link to="/" className="hover:text-[#D6482B] transition-colors">
+              Home
+            </Link>
+            <FaGreaterThan className="text-stone-400" />
+            <Link
+              to="/auctions"
+              className="hover:text-[#D6482B] transition-colors"
+            >
+              Auctions
+            </Link>
+            <FaGreaterThan className="text-stone-400" />
+            <span className="text-stone-600">{auctionDetail.title}</span>
+          </div>
         </div>
         {loading ? (
           <Spinner />
