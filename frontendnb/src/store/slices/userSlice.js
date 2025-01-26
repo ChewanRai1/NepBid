@@ -1,4 +1,4 @@
-import api from '../../utils/api';
+import api from "../../utils/api";
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -112,8 +112,8 @@ const userSlice = createSlice({
 export const register = (data) => async (dispatch) => {
   dispatch(userSlice.actions.registerRequest());
   try {
-    const response = await api.post('/user/register', data, {
-      headers: { 'Content-Type': 'multipart/form-data' }
+    const response = await api.post("/user/register", data, {
+      headers: { "Content-Type": "multipart/form-data" },
     });
     dispatch(userSlice.actions.registerSuccess(response.data));
     toast.success(response.data.message);
@@ -122,7 +122,7 @@ export const register = (data) => async (dispatch) => {
     dispatch(userSlice.actions.clearAllErrors());
   } catch (error) {
     dispatch(userSlice.actions.registerFailed());
-    toast.error(error.response?.data?.message || 'Registration failed');
+    toast.error(error.response?.data?.message || "Registration failed");
     dispatch(userSlice.actions.clearAllErrors());
   }
 };
@@ -151,7 +151,7 @@ export const register = (data) => async (dispatch) => {
 export const login = (data) => async (dispatch) => {
   dispatch(userSlice.actions.loginRequest());
   try {
-    const response = await api.post('/user/login', data);
+    const response = await api.post("/user/login", data);
     dispatch(userSlice.actions.loginSuccess(response.data));
     toast.success(response.data.message);
     // Immediately fetch user data after successful login
@@ -159,7 +159,7 @@ export const login = (data) => async (dispatch) => {
     dispatch(userSlice.actions.clearAllErrors());
   } catch (error) {
     dispatch(userSlice.actions.loginFailed());
-    toast.error(error.response?.data?.message || 'Login failed');
+    toast.error(error.response?.data?.message || "Login failed");
     dispatch(userSlice.actions.clearAllErrors());
   }
 };
@@ -195,27 +195,52 @@ export const logout = () => async (dispatch) => {
 //   }
 // };
 
-export const fetchUser = () => async (dispatch) => {
-  dispatch(userSlice.actions.fetchUserRequest());
-  try {
-    const response = await api.get('/user/me');
-    if (response.data.success) {
-      dispatch(userSlice.actions.fetchUserSuccess(response.data.user));
-    } else {
-      dispatch(userSlice.actions.fetchUserFailed());
-    }
-    dispatch(userSlice.actions.clearAllErrors());
-  } catch (error) {
-    dispatch(userSlice.actions.fetchUserFailed());
-    if (error.response) {
-      // Only show error toast if it's not an auth error
-      if (error.response.status !== 401) {
-        toast.error(error.response.data.message || 'Failed to fetch user data');
+// export const fetchUser = () => async (dispatch) => {
+//   dispatch(userSlice.actions.fetchUserRequest());
+//   try {
+//     const response = await api.get('/user/me');
+//     if (response.data.success) {
+//       dispatch(userSlice.actions.fetchUserSuccess(response.data.user));
+//     } else {
+//       dispatch(userSlice.actions.fetchUserFailed());
+//     }
+//     dispatch(userSlice.actions.clearAllErrors());
+//   } catch (error) {
+//     dispatch(userSlice.actions.fetchUserFailed());
+//     if (error.response) {
+//       // Only show error toast if it's not an auth error
+//       if (error.response.status !== 401) {
+//         toast.error(error.response.data.message || 'Failed to fetch user data');
+//       }
+//     }
+//     dispatch(userSlice.actions.clearAllErrors());
+//   }
+// };
+
+export const fetchUser =
+  (suppressAuthToast = false) =>
+  async (dispatch) => {
+    dispatch(userSlice.actions.fetchUserRequest());
+    try {
+      const response = await api.get("/user/me");
+      if (response.data.success) {
+        dispatch(userSlice.actions.fetchUserSuccess(response.data.user));
+      } else {
+        dispatch(userSlice.actions.fetchUserFailed());
       }
+      dispatch(userSlice.actions.clearAllErrors());
+    } catch (error) {
+      dispatch(userSlice.actions.fetchUserFailed());
+      if (error.response) {
+        // Suppress toast for unauthenticated users during initialization
+        if (error.response.status === 401 && suppressAuthToast) {
+          return;
+        }
+        toast.error(error.response.data.message || "Failed to fetch user data");
+      }
+      dispatch(userSlice.actions.clearAllErrors());
     }
-    dispatch(userSlice.actions.clearAllErrors());
-  }
-};
+  };
 
 export const fetchLeaderboard = () => async (dispatch) => {
   dispatch(userSlice.actions.fetchLeaderboardRequest());
